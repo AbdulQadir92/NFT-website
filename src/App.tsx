@@ -1,25 +1,57 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { useState } from 'react';
+
+// Styles
+import GlobalStyles from './styles/Global';
+import { ThemeProvider } from 'styled-components';
+import { LightTheme } from './styles/themes/LightTheme';
+import { GradientTheme } from './styles/themes/GradientTheme';
+import { DarkTheme } from './styles/themes/DarkTheme';
+import { AppDiv, PagesContainer } from './styles/App';
+
+// Pages
+import Home from './pages/Home';
+import Collection from './pages/Collection';
+import Category from './pages/Category';
+import NFT from './pages/NFT';
+
+// Components
+import Navbar from './components/common/Navbar';
+import Sidebar from './components/common/Sidebar';
+import Footer from './components/common/Footer';
+
 
 function App() {
+  const [theme, setTheme] = useState(() => localStorage.getItem('theme') ? localStorage.getItem('theme') : 'light');
+
+  let _theme = null;
+  if (theme === 'gradient') {
+    _theme = GradientTheme
+  } else if (theme === 'light') {
+    _theme = LightTheme
+  } else {
+    _theme = DarkTheme
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={LightTheme}>
+      <BrowserRouter>
+        <GlobalStyles />
+        <AppDiv>
+          <Navbar theme={theme} setTheme={setTheme} />
+          <Sidebar />
+          <PagesContainer>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/collection" element={<Collection />} />
+              <Route path="/category" element={<Category />} />
+              <Route path="/nft" element={<NFT />} />
+            </Routes>
+          </PagesContainer>
+          <Footer />
+        </AppDiv>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
 
