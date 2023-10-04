@@ -1,8 +1,8 @@
-import { SidebarStyled, Li, CloseIcon } from "../../styles/components/common/Sidebar"
+import { SidebarStyled, CloseIcon } from "../../styles/components/common/Sidebar"
 import { MdClose } from 'react-icons/md'
-import { FaChevronRight } from 'react-icons/fa'
-import Sidebar2 from "./Sidebar2"
-import { Link } from "react-router-dom"
+// import { FaChevronRight } from 'react-icons/fa'
+// import Sidebar2 from "./Sidebar2"
+// import { Link } from "react-router-dom"
 import { useEffect } from 'react'
 
 

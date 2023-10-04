@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import { Link } from "react-router-dom"
 import { NavbarStyled, Brand, Logo, Explore, MenuIcon, Search, Links, LinkStyled } from "../../styles/components/common/Navbar"
-import { FaMoon, FaSun, FaSearch, FaInfoCircle, FaShoppingCart, FaWallet, FaBars } from 'react-icons/fa'
+import { FaSearch, FaInfoCircle, FaShoppingCart, FaWallet, FaBars } from 'react-icons/fa'
 import { MdAccountCircle } from 'react-icons/md'
 import { useNavigate } from "react-router-dom"
 
@@ -20,10 +20,10 @@ const Navbar = ({ theme, setTheme }: any) => {
         })
     }, [])
 
-    const toggleTheme = (newTheme: string) => {
-        localStorage.setItem('theme', newTheme);
-        setTheme(newTheme);
-    }
+    // const toggleTheme = (newTheme: string) => {
+    //     localStorage.setItem('theme', newTheme);
+    //     setTheme(newTheme);
+    // }
 
     const toggleNavbar = () => {
         const navbar = document.querySelector('#navbar') as HTMLElement;
