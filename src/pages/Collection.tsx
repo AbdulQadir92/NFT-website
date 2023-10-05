@@ -1,8 +1,9 @@
+import { CollectionStyled } from "../styles/pages/Collection"
 
 
 const Collection = () => {
     return (
-        <div>Collection</div>
+        <CollectionStyled>Collection</CollectionStyled>
     )
 }
 

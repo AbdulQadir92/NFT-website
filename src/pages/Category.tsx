@@ -1,8 +1,9 @@
+import { CategoryStyled } from "../styles/pages/Category"
 
 
 const Category = () => {
     return (
-        <div>Category</div>
+        <CategoryStyled>Category</CategoryStyled>
     )
 }
 

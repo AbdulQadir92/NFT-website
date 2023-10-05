@@ -1,5 +1,5 @@
-import { FooterStyled, AboutSection, AccountSection, LearnSection, Logo } from "../../styles/components/common/Footer";
-import { Link } from "react-router-dom";
+import { FooterStyled, AboutSection, AccountSection, LearnSection, Logo } from "../../styles/components/common/Footer"
+import { Link } from "react-router-dom"
 
 
 const Footer = () => {

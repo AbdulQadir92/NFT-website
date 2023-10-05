@@ -42,6 +42,25 @@ const GlobalStyles = createGlobalStyle`
         background: #555; 
     }
 
+    main {
+        padding: 90px 2.5% 30px 2.5%;
+    
+        @media (min-width: 1400px) {
+            padding-left: 7%;
+            padding-right: 7%;
+        }
+
+        @media (min-width: 1700px) {
+            padding-left: 10%;
+            padding-right: 10%;
+        }
+
+        @media (min-width: 2000px) {
+            padding-left: 15%;
+            padding-right: 15%;
+        }
+    }
+
     h1, h2, h3, h4, h5, h6 {
         font-family: 'Merriweather', serif;
         /* 400, 700, 900 */

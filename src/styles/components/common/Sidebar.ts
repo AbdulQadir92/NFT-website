@@ -122,7 +122,7 @@ export const Li = styled.li`
 
     }
 
-    :hover {
+    &:hover {
         > a {
             /* background-color: ${({ theme }) => theme.colors.mainColor};
             background-image: linear-gradient(180deg, rgba(255, 255, 255, .15), rgba(255, 255, 255, 0));

@@ -276,10 +276,6 @@ export const Links = styled.div`
 
 export const LinkStyled = styled.span`
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    display: flex;
     justify-content: center;
     align-items: center;
 
@@ -306,5 +302,9 @@ export const LinkStyled = styled.span`
     @media (max-width: 992px) {
         width: 30px;
         height: 30px;
+    }
+
+    @media (max-width: 1200px) {
+        
     }
 `
