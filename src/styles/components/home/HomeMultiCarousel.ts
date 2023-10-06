@@ -81,6 +81,7 @@ export const Collection = styled.div`
     padding: 0 10px;
     border-radius: 10px;
     position: relative;
+    cursor: pointer;
 
     img {
         width: 100%;

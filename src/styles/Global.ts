@@ -28,20 +28,6 @@ const GlobalStyles = createGlobalStyle`
         font-size: 1.6rem;
     }
 
-    ::-webkit-scrollbar {
-        width: 15px;
-    }
-    ::-webkit-scrollbar-track {
-        background: #f1f1f1; 
-    }
-    ::-webkit-scrollbar-thumb {
-        background: #888; 
-        border-radius: 10px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-        background: #555; 
-    }
-
     main {
         padding: 100px 2.5% 30px 2.5%;
     
@@ -61,6 +47,24 @@ const GlobalStyles = createGlobalStyle`
         }
     }
 
+    section:not(:first-of-type) {
+        padding-top: 100px;
+    }
+
+    ::-webkit-scrollbar {
+        width: 15px;
+    }
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1; 
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #888; 
+        border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555; 
+    }
+
     h1, h2, h3, h4, h5, h6 {
         font-family: 'Merriweather', serif;
         /* 400, 700, 900 */
@@ -70,18 +74,18 @@ const GlobalStyles = createGlobalStyle`
     }
 
     h1 {
-        font-size: 35px;
+        font-size: 3.5rem;
         font-weight: 700;
         color: ${({ theme }) => theme.colors.lightText};
     }
 
     h2 {
-        font-size: 25px;
+        font-size: 2.5rem;
         color: ${({ theme }) => theme.colors.lightText};
     }
 
     h3 {
-        font-size: 20px;
+        font-size: 2rem;
         color: ${({ theme }) => theme.colors.lightText};
     }
 
@@ -111,9 +115,9 @@ const GlobalStyles = createGlobalStyle`
         color: ${({ theme }) => theme.colors.lightTextSec};
     }
 
-    @media (max-width: 576px) {
+    @media (max-width: 600px) {
         h1 {
-            font-size: 28px;
+            font-size: 2.8rem;
         }
     }
 `

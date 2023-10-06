@@ -50,7 +50,7 @@ export const Skeleton1 = styled.div`
 
     // loading skeleton
     > span > span {
-        height: 250px;
+        height: 260px;
     }
 
     @media (max-width: 992px) {
