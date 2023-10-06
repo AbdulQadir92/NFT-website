@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit'
-import sidebarReducer from './sidebarSlice';
+import sidebarReducer from './sidebarSlice'
+import collectionsReducer from './collectionsSlice'
 
 
 const makeStore = () => configureStore({
     reducer: {
-        sidebar: sidebarReducer
+        sidebar: sidebarReducer,
+        collections: collectionsReducer
     }
 })
 

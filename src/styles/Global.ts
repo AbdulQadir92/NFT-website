@@ -43,7 +43,7 @@ const GlobalStyles = createGlobalStyle`
     }
 
     main {
-        padding: 90px 2.5% 30px 2.5%;
+        padding: 100px 2.5% 30px 2.5%;
     
         @media (min-width: 1400px) {
             padding-left: 7%;

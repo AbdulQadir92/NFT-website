@@ -26,7 +26,7 @@ const initialState: IData = {
     loading: true,
     message: '',
     error: ''
-}
+};
 
 export const getSidebarData = createAsyncThunk(
     "sidebar/getData",

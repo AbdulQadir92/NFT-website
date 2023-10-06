@@ -1,9 +1,12 @@
 import { HomeStyled } from "../styles/pages/Home"
+import TopSection from "../components/home/TopSection"
 
 
 const Home = () => {
     return (
-        <HomeStyled>Home</HomeStyled>
+        <HomeStyled>
+            <TopSection />
+        </HomeStyled>
     )
 }
 
