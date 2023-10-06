@@ -12,7 +12,6 @@ import { AppDispatch, RootState } from "../../store/store"
 import { getTopCollections } from "../../store/collectionsSlice"
 
 
-
 const TopCollections = () => {
     const navigate = useNavigate();
 
@@ -23,7 +22,7 @@ const TopCollections = () => {
         dispatch(
             getTopCollections()
         )
-    }, [])
+    }, [dispatch])
 
     const navigateToCollection = (item: any) => {
         navigate(`/collections/${item.contracts[0].contract_address}`)
@@ -39,7 +38,7 @@ const TopCollections = () => {
                         {data.results.map((item: any, index: number) => (
                             <Card key={index} onClick={() => navigateToCollection(item)}>
                                 <ImageContainer>
-                                    <img src={item.image_url} alt="..." />
+                                    <img src={item.image_url} alt={item.name} />
                                 </ImageContainer>
                                 <CardBody>
                                     <h2>{item.name}</h2>

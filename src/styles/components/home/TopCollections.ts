@@ -83,16 +83,16 @@ export const CardBody = styled.div`
 
         height: 70%;
 
+        // heading and paragraph of floor and volume
         h3 {
             font-size: 1.5rem;
             font-weight: 700;
             color: ${({ theme }) => theme.colors.lightTextSec};
-
         }
 
         p {
             color: ${({ theme }) => theme.colors.lightText};
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 500;
         }
     }
@@ -108,7 +108,7 @@ export const CardBody = styled.div`
         }
 
         p {
-            font-size: 17px;
+            font-size: 1.7rem;
         }
     }
 
@@ -144,7 +144,7 @@ export const CardBody = styled.div`
 `
 
 export const Floor = styled.div`
-    
+   
 `
 
 export const Volume = styled.div`
