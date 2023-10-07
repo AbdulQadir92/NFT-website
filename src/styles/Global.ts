@@ -29,8 +29,13 @@ const GlobalStyles = createGlobalStyle`
     }
 
     main {
-        padding: 100px 2.5% 30px 2.5%;
-    
+        padding-top: 100px;
+    }
+
+    section {
+        padding-left: 2.5%;
+        padding-right: 2.5%;
+
         @media (min-width: 1400px) {
             padding-left: 7%;
             padding-right: 7%;

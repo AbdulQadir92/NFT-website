@@ -16,18 +16,32 @@ export const FooterStyled = styled.footer`
 
     h3 {
         text-align: center;
-        margin-bottom: 20px;
         color: ${({ theme }) => theme.footer.lightTextSec};
         font-weight: bold;
     }
 
     @media (max-width: 992px) {
         padding: 70px 7%;
-        gap: 20px;
+        gap: 50px;
     }
 
     @media (max-width: 768px) {
         grid-template-columns: 1fr; 
+    }
+
+    @media (min-width: 1400px) {
+        padding-left: 7%;
+        padding-right: 7%;
+    }
+
+    @media (min-width: 1700px) {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+    @media (min-width: 2000px) {
+        padding-left: 15%;
+        padding-right: 15%;
     }
 `
 
@@ -35,6 +49,7 @@ export const AboutSection = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 10px;
 
     p {
         color: ${({ theme }) => theme.footer.lightTextSec};
@@ -72,6 +87,10 @@ export const AccountSection = styled.div`
     flex-direction: column;
     align-items: center;
 
+    > h3 {
+        margin-bottom: 20px;
+    }
+
     > ul {
         display: flex;
         flex-direction: column;
@@ -80,7 +99,7 @@ export const AccountSection = styled.div`
         width: 120px;
         padding: 0;
         list-style: none;
-        transform: translateX(19px);
+        transform: translateX(17px);
     }
 
     > ul a {
@@ -102,7 +121,7 @@ export const LearnSection = styled(AccountSection)`
 
     > ul {
         width: 200px;
-        transform: translateX(73px);
+        transform: translateX(70px);
     }
 
     @media (max-width: 992px) {
