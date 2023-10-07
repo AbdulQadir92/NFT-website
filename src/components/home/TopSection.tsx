@@ -12,7 +12,7 @@ import { getTopCollections } from "../../store/collectionsSlice"
 
 const TopSection = () => {
     const dispatch = useDispatch<AppDispatch>();
-    const { data, loading } = useSelector((state: RootState) => state.collections);
+    const { data } = useSelector((state: RootState) => state.collections);
 
     useEffect(() => {
         dispatch(
@@ -29,7 +29,7 @@ const TopSection = () => {
                 </div>
             </TopPart>
             <BottomPart>
-                {loading ? <TopSectionLoader /> : <HomeMultiCarousel data={data.results} />}
+                {data.topCollections.loading ? <TopSectionLoader /> : <HomeMultiCarousel data={data.topCollections.item.results} />}
             </BottomPart>
         </TopSectionStyled>
     )

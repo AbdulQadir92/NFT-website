@@ -1,18 +1,16 @@
 // @ts-nocheck
-import { TopCollectionsStyled, CardsContainer, Card, ImageContainer, CardBody, Floor, Volume, ButtonContainer } from "../../styles/components/home/TopCollections"
-import { ButtonStyled } from "../../styles/components/common/Button"
+import { TrendingStyled, CardsContainer, Card, CardHeader, CardBody, Floor, Volume } from "../../styles/components/home/Trending"
 import { useEffect } from "react"
-import CONTENT from "../../utils/content"
 import { useNavigate } from "react-router-dom"
-import { Link } from "react-router-dom"
-import TopCollectionsLoader from "./loaders/TopCollectionsLoader"
+import CONTENT from "../../utils/content"
+import TrendingLoader from "./loaders/TrendingLoader"
 
 import { useDispatch, useSelector } from "react-redux"
 import { AppDispatch, RootState } from "../../store/store"
-import { getTopCollections } from "../../store/collectionsSlice"
+import { getTrendingCollections } from "../../store/collectionsSlice"
 
 
-const TopCollections = () => {
+const Trending = () => {
     const navigate = useNavigate();
 
     const dispatch = useDispatch<AppDispatch>();
@@ -20,7 +18,7 @@ const TopCollections = () => {
 
     useEffect(() => {
         dispatch(
-            getTopCollections()
+            getTrendingCollections()
         )
     }, [dispatch])
 
@@ -29,26 +27,28 @@ const TopCollections = () => {
     }
 
     return (
-        <TopCollectionsStyled>
-            <h1>{CONTENT.home.topCollectionsSection.heading}</h1>
+        <TrendingStyled>
+            <h1>{CONTENT.home.trendingCollectionsSection.heading}</h1>
             <CardsContainer>
-                {data.topCollections.loading ? <TopCollectionsLoader /> : (
+                {data.trendingCollections.loading ? <TrendingLoader /> : (
                     <>
-                        {data.topCollections.item.results.map((item: any, index: number) => (
+                        {data.trendingCollections.item.results.map((item, index) => (
                             <Card key={index} onClick={() => navigateToCollection(item)}>
-                                <ImageContainer>
-                                    <img src={item.image_url} alt={item.name} />
-                                </ImageContainer>
+                                <CardHeader>
+                                    <div>
+                                        <img src={item.image_url} alt="..." />
+                                    </div>
+                                </CardHeader>
                                 <CardBody>
                                     <h2>{item.name}</h2>
                                     <div>
                                         <Floor>
                                             <h3>Floor Price</h3>
-                                            <p>{item.stats.one_day_volume.toFixed(2)} {data.chain}</p>
+                                            <p>{item.stats.one_day_volume.toFixed(2)} arb</p>
                                         </Floor>
                                         <Volume>
                                             <h3>Total Volume</h3>
-                                            <p>{item.stats.total_volume.toFixed(2)} {data.chain}</p>
+                                            <p>{item.stats.total_volume.toFixed(2)} arb</p>
                                         </Volume>
                                     </div>
                                 </CardBody>
@@ -57,13 +57,8 @@ const TopCollections = () => {
                     </>
                 )}
             </CardsContainer>
-            <ButtonContainer>
-                <ButtonStyled>
-                    <Link to="#">All Collections</Link>
-                </ButtonStyled>
-            </ButtonContainer>
-        </TopCollectionsStyled>
+        </TrendingStyled>
     )
 }
 
-export default TopCollections
+export default Trending
