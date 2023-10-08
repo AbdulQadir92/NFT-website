@@ -9,6 +9,7 @@ import { ButtonStyled } from "../../styles/components/common/Button"
 
 
 const CollectionSidebar = ({ setFilters }: any) => {
+
     const [status, setStatus] = useState('All');
     const [price, setPrice] = useState({});
     const [quantity, setQuantity] = useState('All Items');

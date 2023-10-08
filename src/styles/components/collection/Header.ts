@@ -105,7 +105,7 @@ export const Li = styled.li`
     > div {
         color: ${({ theme }) => theme.colors.lightTextSec};
         margin-bottom: 5px;
-        font-size: 15px;
+        font-size: 1.5rem;
     }
 
     > p {
@@ -184,7 +184,7 @@ export const LinkStyled = styled.span`
         width: 30px;
         height: 30px;
         border-radius: 50%;
-        font-size: 16px;
+        font-size: 1.6rem;
         color: ${({ theme }) => theme.colors.lightText};   
         cursor: pointer;
         transition: 0.3s;

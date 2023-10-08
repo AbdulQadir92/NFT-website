@@ -4,7 +4,6 @@ import styled from 'styled-components'
 export const NavbarStyled = styled.nav`
     display: grid;
     align-items: center;
-    /* grid-template-columns: 1fr 2fr 1fr; */
     grid-template-columns: 280px 2fr 1fr;
     grid-gap: 15px;
 
@@ -12,8 +11,6 @@ export const NavbarStyled = styled.nav`
     position: sticky;
     top: 75px;
     z-index: 10;
-
-    /* padding: 0 2.5%; */
 
     @media (max-width: 992px) {
         grid-template-columns: 1fr 1fr 1fr;
@@ -69,7 +66,7 @@ export const SidebarButton = styled.div`
 
         width: 20px;
         height: 20px;
-        font-size: 14px;
+        font-size: 1.4rem;
         color: ${({ theme }) => theme.colors.lightText};
         border-radius: 50%;
 
@@ -144,7 +141,7 @@ export const Search = styled.div`
         top: 6px;
         right: 15px;
 
-        font-size: 20px;
+        font-size: 2rem;
         color: ${({ theme }) => theme.colors.mainColor};
         cursor: pointer;
     }

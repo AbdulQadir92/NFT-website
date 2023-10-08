@@ -96,7 +96,7 @@ export const Item = styled.li`
         cursor: pointer;
 
         > span:nth-child(2) {
-            font-size: 14px;
+            font-size: 1.4rem;
             transition: 0.3s;
 
             &.rotated {
@@ -246,7 +246,7 @@ export const PriceDropdownBody = styled.div`
 
         padding: 5px 7px;
         color: ${({ theme }) => theme.colors.lightText};
-        font-size: 14px;
+        font-size: 1.4rem;
         cursor: pointer;
 
         > span:last-child {

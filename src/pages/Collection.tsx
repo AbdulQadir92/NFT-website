@@ -47,7 +47,7 @@ const Collection = () => {
                     <CollectionStyled>
                         <h2>Items</h2>
                         <CollectionSticky>
-                            <CollectionNavbar filters={filters} />
+                            <CollectionNavbar filters={filters} setFilters={setFilters} />
                             <CollectionMain>
                                 <div>
                                     <CollectionSidebar setFilters={setFilters} />

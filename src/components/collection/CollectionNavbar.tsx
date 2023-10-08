@@ -1,10 +1,13 @@
 import { NavbarStyled, SidebarButton, Search, Filters } from "../../styles/components/collection/CollectionNavbar"
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 import { FaSearch, FaChevronDown, FaBars } from "react-icons/fa"
 import NavDropdown from "./NavDropdown"
 
 
-const CollectionNavbar = ({ filters }: any) => {
+const CollectionNavbar = ({ filters, setFilters }: any) => {
+    const navigate = useNavigate();
+
     const [price, setPrice] = useState('Low to high');
 
     const toggleDropdown = (e: any) => {
@@ -35,6 +38,11 @@ const CollectionNavbar = ({ filters }: any) => {
         return _filters.length
     }
 
+    const resetFilters = () => {
+        navigate('/');
+        navigate(-1);
+    }
+
     return (
         <NavbarStyled>
             <Search>
@@ -49,7 +57,7 @@ const CollectionNavbar = ({ filters }: any) => {
                     <span>Filters</span>
                 </div>
                 <div>{formatFilters()}</div>
-                <div className={formatFilters() ? 'shown' : ''} onClick={() => window.location.reload()}>Clear All</div>
+                <div className={formatFilters() ? 'shown' : ''} onClick={resetFilters}>Clear All</div>
             </SidebarButton>
             <Filters>
                 <ul>
