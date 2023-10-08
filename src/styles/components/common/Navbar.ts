@@ -9,7 +9,7 @@ export const NavbarStyled = styled.nav`
 
     position: fixed;
     top: 0;
-    z-index: 10;
+    z-index: 100;
     
     padding: 0 2.5%;
 

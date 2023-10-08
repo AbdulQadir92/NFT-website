@@ -48,7 +48,7 @@ function App() {
             <PagesContainer>
               <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/collection" element={<Collection />} />
+                <Route path="/collections/:contract_address" element={<Collection />} />
                 <Route path="/category" element={<Category />} />
                 <Route path="/nft" element={<NFT />} />
               </Routes>

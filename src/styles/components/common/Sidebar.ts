@@ -2,16 +2,16 @@ import styled from "styled-components"
 
 
 export const SidebarStyled = styled.aside`
-    * {
+    /* * {
         padding: 0;
         margin: 0;
         box-sizing: border-box;
-    }
+    } */
 
     position: fixed;
     left: -280px;
     top: 65px;
-    z-index: 10;
+    z-index: 1000;
 
     width: 270px;
     min-height: 270px;
