@@ -43,8 +43,10 @@ const ReactInfiniteScroll = ({ contract_address }: any) => {
         }, 2000)
     }
 
-    const navigateToNFT = (index: number) => {
-        navigate(`/nft/${index + 1}`)
+    const navigateToNFT = (item: any) => {
+        const indexOfHash = item.token_name.indexOf('#');
+        const token = item.token_name.slice(indexOfHash + 1);
+        navigate(`/nft/${token}`)
     }
 
     return (
@@ -65,7 +67,7 @@ const ReactInfiniteScroll = ({ contract_address }: any) => {
                         }
                     >
                         {nfts.map((item: any, index: number) => (
-                            <Card key={index} onClick={() => navigateToNFT(index)}>
+                            <Card key={index} onClick={() => navigateToNFT(item)}>
                                 <div>
                                     <img src={item.cached_images.original} alt="..." />
                                 </div>

@@ -22,11 +22,17 @@ export interface ICollectionNFTs {
     loading: boolean
 }
 
+export interface INft {
+    item: Object,
+    loading: boolean
+}
+
 export interface IDataObject {
     topCollections: ITopCollections,
     trendingCollections: ITrendingCollections,
     collection: ICollection,
-    collectionNFTs: ICollectionNFTs
+    collectionNFTs: ICollectionNFTs,
+    nft: INft
 }
 
 export interface IData {
@@ -50,6 +56,10 @@ const initialState: IData = {
             loading: true
         },
         collectionNFTs: {
+            item: {},
+            loading: true
+        },
+        nft: {
             item: {},
             loading: true
         }
@@ -85,6 +95,13 @@ export const getCollectionNFTs = createAsyncThunk(
         return getRequest(`https://api.blockspan.com/v1/nfts/contract/0x41f56b000fffe17943fb4c182c123767af71d005?chain=eth-main&page_size=20`)
     }
 );
+
+export const getNFT = createAsyncThunk(
+    'nft/getNFT',
+    async (token) => {
+        return getRequest(`https://api.blockspan.com/v1/nfts/contract/0x41f56b000fffe17943fb4c182c123767af71d005/token/${token}?chain=eth-main`)
+    }
+)
 
 export const collectionsSlice = createSlice({
     name: "collections",
@@ -151,6 +168,21 @@ export const collectionsSlice = createSlice({
         builder.addCase(getCollectionNFTs.rejected, (state) => {
             state.error = 'an error occured'
             state.data.collectionNFTs.loading = false
+        })
+
+        // getNFT
+        builder.addCase(getNFT.pending, (state) => {
+            state.data.nft.loading = true
+        })
+        builder.addCase(getNFT.fulfilled, (state, action) => {
+            // @ts-ignore
+            state.data.nft.item = action.payload
+            state.message = 'Data fetched successfully'
+            state.data.nft.loading = false
+        })
+        builder.addCase(getNFT.rejected, (state) => {
+            state.error = 'an error occured'
+            state.data.nft.loading = false
         })
     }
 });
