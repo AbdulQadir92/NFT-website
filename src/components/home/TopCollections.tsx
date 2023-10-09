@@ -1,10 +1,10 @@
 // @ts-nocheck
-import { TopCollectionsStyled, CardsContainer, Card, ImageContainer, CardBody, Floor, Volume, ButtonContainer } from "../../styles/components/home/TopCollections"
-import { ButtonStyled } from "../../styles/components/common/Button"
+import { TopCollectionsStyled, CardsContainer, Card, ImageContainer, CardBody, Floor, Volume } from "../../styles/components/home/TopCollections"
+// import { ButtonStyled } from "../../styles/components/common/Button"
 import { useEffect } from "react"
 import CONTENT from "../../utils/content"
 import { useNavigate } from "react-router-dom"
-import { Link } from "react-router-dom"
+// import { Link } from "react-router-dom"
 import TopCollectionsLoader from "./loaders/TopCollectionsLoader"
 
 import { useDispatch, useSelector } from "react-redux"
@@ -57,11 +57,11 @@ const TopCollections = () => {
                     </>
                 )}
             </CardsContainer>
-            <ButtonContainer>
+            {/* <ButtonContainer>
                 <ButtonStyled>
                     <Link to="#">All Collections</Link>
                 </ButtonStyled>
-            </ButtonContainer>
+            </ButtonContainer> */}
         </TopCollectionsStyled>
     )
 }

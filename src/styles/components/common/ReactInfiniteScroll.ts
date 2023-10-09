@@ -62,6 +62,7 @@ export const EndMessage = styled.p`
 export const Card = styled.div`
     padding: 10px;
     border-radius: 10px;
+    cursor: pointer;
 
     background: ${({ theme }) => theme.colors.glassBg};
     backdrop-filter: ${({ theme }) => theme.colors.glassBackdropFilter};
@@ -69,7 +70,7 @@ export const Card = styled.div`
     border: ${({ theme }) => theme.colors.glassBorder};
 
 
-    :hover {
+    &:hover {
         background: ${({ theme }) => theme.colors.glassBgHover};
         border: ${({ theme }) => theme.colors.glassBorderHover};
     }
