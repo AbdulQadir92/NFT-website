@@ -50,7 +50,7 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/collections/:contract_address" element={<Collection />} />
                 <Route path="/nft/:token" element={<NFT />} />
-                <Route path="/category" element={<Category />} />
+                <Route path="/categories/:id" element={<Category />} />
               </Routes>
             </PagesContainer>
             <Footer />
